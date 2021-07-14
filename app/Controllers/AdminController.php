@@ -363,13 +363,21 @@ class AdminController extends BaseController
 		$session = session();
 		$data['nama_admin'] = $session->get('nama_admin');
 		$data['gambar'] = $session->get('gambar');
-
-		if ($modelAdmin->HapusWisata($id_wisata)) {
-			unlink(ROOTPATH . 'public/gambar_wisata/' . $gambar);
-			session()->setFlashdata('msg', "Data Wisata Berhasil dihapus");
-			return redirect()->to('../AdminController/EditWisata');
+		if (file_exists(ROOTPATH . 'public/gambar_wisata/' . $gambar)) {
+			if ($modelAdmin->HapusWisata($id_wisata)) {
+				unlink(ROOTPATH . 'public/gambar_wisata/' . $gambar);
+				session()->setFlashdata('msg', "Data Wisata Berhasil dihapus");
+				return redirect()->to('../AdminController/EditWisata');
+			} else {
+				echo "error";
+			}
 		} else {
-			echo "error";
+			if ($modelAdmin->HapusWisata($id_wisata)) {
+				session()->setFlashdata('msg', "Data Wisata Berhasil dihapus");
+				return redirect()->to('../AdminController/EditWisata');
+			} else {
+				echo "error";
+			}
 		}
 	}
 	#end proses tempat wisata

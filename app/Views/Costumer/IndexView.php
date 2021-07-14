@@ -1,15 +1,12 @@
 <body>
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex justify-content-center align-items-center">
-    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-      <h1>MUDAHKAN PERJALANANMU</h1>
-      <h2>Mendapatkan segala kebutuhanmu di Wisata Morowali!</h2>
-      <?php if (isset($id_user)) : ?>
-        <a href="<?= base_url('PublicController/ProdukView') ?>" class="btn-get-started">Cari Kebutuhan</a>
-      <?php else : ?>
-        <a href="<?= base_url('PublicController/RegisterView')  ?>" class="btn-get-started">Daftar</a>
-      <?php endif; ?>
+  <section id="hero" class="d-flex justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Lifelong memories just a few second away</h1>
+      <h2>Let's start journey with us, your dream will come true!</h2>
+      <a href="<?= base_url('PublicController/ProdukView') ?>" class="btn btn-success btnjelajahi">Jelajahi</a>
     </div>
+    <img src="<?= base_url('public_asset/img/bghero.png') ?>" width="80%" id="bghero" alt="">
   </section><!-- End Hero -->
 
   <main id="main">

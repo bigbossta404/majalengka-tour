@@ -67,7 +67,7 @@
                         <?php foreach ($pembayaran as $data) : ?>
                           <tr>
                             <td><?= $no += 1 ?></td>
-                            <td><?= ($data['nama_produk'] == null) ? $data['produk'] : $data['nama_produk']; ?></td>
+                            <td><?= $data['nama_produk'] ?></td>
                             <td><?= $data['fname']  ?> <?= $data['lname']  ?></td>
                             <td><?= $data['banyak'];  ?>xRp. <?= number_format($data['harga']); ?></td>
                             <td><?php

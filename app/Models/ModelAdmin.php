@@ -42,13 +42,13 @@ class ModelAdmin extends Model
 	#Proses Wisata
 	public function AddWisata($id_kategori, $nama_tempat, $deskripsi, $gambar)
 	{
-		$query = $this->db->query("INSERT INTO tb_wisata(id_kategori, nama_tempat, deskripsi, gambar) VALUES('$id_kategori', '$nama_tempat', '$deskripsi', '$gambar')");
+		$query = $this->db->query("INSERT INTO tb_produk(id_kategori, nama_produk, deskripsi, gambar,available) VALUES('$id_kategori', '$nama_tempat', '$deskripsi', '$gambar',1)");
 		return $query;
 	}
 
 	public function SeeWisata()
 	{
-		$query = $this->db->query("SELECT * FROM tb_produk where id_kategori = 1 order by id_produk desc");
+		$query = $this->db->query("SELECT * FROM tb_produk where id_kategori = 1 and available = 1 order by id_produk desc");
 		return $query->getResultArray();
 	}
 
@@ -72,7 +72,7 @@ class ModelAdmin extends Model
 
 	public function HapusWisata($id_wisata)
 	{
-		$query = $this->db->query("DELETE FROM tb_produk WHERE id_produk='$id_wisata'");
+		$query = $this->db->query("UPDATE tb_produk SET available = 0 WHERE id_produk='$id_wisata'");
 		return $query;
 	}
 	#End Proses Wisata
@@ -88,13 +88,13 @@ class ModelAdmin extends Model
 	#Proses Produk
 	public function AddProduk($id_kategori, $nama_produk, $deskripsi, $stok, $harga, $namaGambar)
 	{
-		$query = $this->db->query("INSERT INTO tb_produk(id_kategori,nama_produk,stok,deskripsi,gambar,harga) VALUES('$id_kategori', '$nama_produk', '$stok', '$deskripsi', '$namaGambar', '$harga')");
+		$query = $this->db->query("INSERT INTO tb_produk(id_kategori,nama_produk,stok,deskripsi,gambar,harga,available) VALUES('$id_kategori', '$nama_produk', '$stok', '$deskripsi', '$namaGambar', '$harga',1)");
 		return $query;
 	}
 
 	public function SeeProduk()
 	{
-		$query = $this->db->query("SELECT tb.*, tk.jenis_kategori FROM tb_produk as tb JOIN tb_kategori as tk ON tk.id_kategori=tb.id_kategori");
+		$query = $this->db->query("SELECT tb.*, tk.jenis_kategori FROM tb_produk as tb JOIN tb_kategori as tk ON tk.id_kategori=tb.id_kategori WHERE available = 1");
 		return $query->getResultArray();
 	}
 
@@ -117,7 +117,7 @@ class ModelAdmin extends Model
 	}
 	public function HapusProduk($id_produk)
 	{
-		$query = $this->db->query("DELETE FROM tb_produk WHERE id_produk='$id_produk'");
+		$query = $this->db->query("UPDATE tb_produk SET available = 0 WHERE id_produk='$id_produk'");
 		return $query;
 	}
 	#End Proses Produk

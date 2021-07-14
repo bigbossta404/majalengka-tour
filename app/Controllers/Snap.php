@@ -144,7 +144,6 @@ class Snap extends BaseController
 		#data
 		$id_jual = $this->request->getVar('id_jual');
 		$id_produk = $this->request->getVar('id_produk');
-		$nama_produk = $this->request->getVar('nama_produk');
 		$id_user = $session->get('id_user');
 
 		$order_id = $result->order_id;
@@ -159,7 +158,7 @@ class Snap extends BaseController
 
 		$total = $harga * $banyak;
 
-		if ($ModelPublic->InsertTransaksi($id_jual, $id_produk, $nama_produk, $total, $id_user, $order_id, $banyak)) {
+		if ($ModelPublic->InsertTransaksi($id_jual, $id_produk, $total, $id_user, $order_id, $banyak)) {
 			if ($ModelPublic->InsertPembayaran($order_id, $va_number)) {
 				if ($ModelPublic->UpdateJual($banyak, $id_jual)) {
 					return redirect()->to('TransaksiView');

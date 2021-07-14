@@ -1,10 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <img src="<?= base_url('asset/dist/img/AdminLTELogo.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-    style="opacity: .8">
-    <span class="brand-text font-weight-light">Morwali Tour</span>
+  <a href="index3.html" class="brand-link d-flex justify-content-center">
+    <img src="<?= base_url('public_asset/img/iconadmin.svg') ?>" style="color:white;" alt="AdminLTE Logo" width="80%">
   </a>
 
   <!-- Sidebar -->
@@ -12,7 +10,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-4 pb-4 mb-4 d-flex">
       <div class="image">
-        <img style="width:40px;height:40px;"src="<?= base_url('gambar_admin/'.$gambar) ?>" class="img-circle elevation-2" alt="User Image">
+        <img style="width:40px;height:40px;" src="<?= base_url('gambar_admin/' . $gambar) ?>" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
         <a href="#" class="d-block"><?= $nama_admin ?></a>

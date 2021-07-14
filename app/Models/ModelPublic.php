@@ -141,9 +141,9 @@ class ModelPublic extends Model
 		return $query->getRowArray();
 	}
 
-	public function InsertTransaksi($id_jual, $id_produk, $nama_produk, $total, $id_user, $order_id, $banyak)
+	public function InsertTransaksi($id_jual, $id_produk, $total, $id_user, $order_id, $banyak)
 	{
-		$query = $this->db->query("INSERT INTO tb_transaksi(id_transaksi, id_produk, id_user, produk, tgl_transaksi, id_jual, banyak, totBayar, status) VALUES('$order_id', '$id_produk', '$id_user','$nama_produk', NOW(), '$id_jual', '$banyak', '$total', '0')");
+		$query = $this->db->query("INSERT INTO tb_transaksi(id_transaksi, id_produk, id_user, tgl_transaksi, id_jual, banyak, totBayar, status) VALUES('$order_id', '$id_produk', '$id_user', NOW(), '$id_jual', '$banyak', '$total', '0')");
 		return $query;
 	}
 
