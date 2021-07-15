@@ -10,7 +10,35 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
+    <section class="topvisited d-flex justify-content-center align-items-center flex-column">
+      <h1>Top Visited!</h1>
+      <div class="boxslide d-flex">
+        <a href="#" class="card">
+          <img src="<?= base_url('public_asset/img_wisata/panyaweuyan.jpg') ?>" id="cardimg" alt="">
+          <div class="overlay d-flex align-items-center justify-content-center">
+            <div class="textoverlay">Panyaweuyan</div>
+          </div>
+        </a>
+        <a href="#" class="card">
+          <img src="<?= base_url('public_asset/img_wisata/ciboer.jpg') ?>" id="cardimg" alt="">
+          <div class="overlay d-flex align-items-center justify-content-center">
+            <div class="textoverlay">Ciboer Pass</div>
+          </div>
+        </a>
+        <a href="#" class="card">
+          <img src="<?= base_url('public_asset/img_wisata/paraland.jpg') ?>" id="cardimg" alt="">
+          <div class="overlay d-flex align-items-center justify-content-center">
+            <div class="textoverlay">Paraland</div>
+          </div>
+        </a>
+        <a href="#" class="card">
+          <img src="<?= base_url('public_asset/img_wisata/situcipanten.jpg') ?>" id="cardimg" alt="">
+          <div class="overlay d-flex align-items-center justify-content-center">
+            <div class="textoverlay">Situcipanten</div>
+          </div>
+        </a>
+      </div>
+    </section>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
@@ -34,15 +62,6 @@
         </div>
       </div>
     </section>
-    <section class="slide-content">
-      <!-- <div class="gallery js-flickity"
-            data-flickity-options='{ "wrapAround": true }'>
-            <div class="gallery-cell"><a href="https://google.com/"><img src="<?= base_url('public_asset/img_wisata/panyaweuyan.jpg') ?>" alt="panyaweuyan" /></a></div>
-            <div class="gallery-cell"></div>
-            <div class="gallery-cell"></div>
-            <div class="gallery-cell"></div>
-            <div class="gallery-cell"></div>
-         </div> -->
-    </section><!-- End About Section -->
+    <!-- End About Section -->
   </main><!-- End #main -->
 </body>

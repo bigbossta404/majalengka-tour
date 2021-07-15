@@ -23,36 +23,6 @@
     font-size: 14px;
     margin: 0px;
   }
-
-  .slide-content {
-    height: 100vh;
-  }
-
-  .gallery {
-    background: #EEE;
-  }
-
-  .gallery-cell {
-    width: 66%;
-    height: 100%;
-    margin-right: 10px;
-    background: #8C8;
-    display: flex;
-    justify-content: center;
-  }
-
-  .gallery-cell img {
-    height: 100vh;
-    transform: translate(10px, -60px);
-  }
-
-  .gallery-cell:before {
-    display: block;
-    text-align: center;
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
-  }
 </style>
 
 <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
