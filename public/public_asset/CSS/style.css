@@ -533,7 +533,7 @@ h6 {
     margin-top: 3em;
 }
 
-.card {
+.cardbox {
     display: flex;
     height: 280px;
     width: 300px;
@@ -553,16 +553,16 @@ h6 {
     border-radius: 6%;
 }
 
-.card:not(:first-child) {
+.cardbox:not(:first-child) {
     margin-left: 50px;
 }
 
-.card:hover {
+.cardbox:hover {
     transform: translateY(-20px);
     transition: 0.4s ease-out;
 }
 
-.card:hover~.card {
+.cardbox:hover~.cardbox {
     position: relative;
     left: 50px;
     transition: 0.4s ease-out;
@@ -761,6 +761,24 @@ section {
 # About
 --------------------------------------------------------------*/
 
+
+/* .about {
+    margin: 80px;
+} */
+
+.abouttext {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.aboutbg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .about .content h3 {
     font-weight: 600;
     font-size: 26px;
@@ -779,6 +797,11 @@ section {
     font-size: 20px;
     padding-right: 4px;
     color: #21d4fd;
+}
+
+.about p {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .about .content .learn-more-btn {
@@ -1665,14 +1688,14 @@ section {
 --------------------------------------------------------------*/
 
 #footer {
-    color: #37423b;
+    color: #ffffff;
     font-size: 14px;
     background: #eef0ef;
 }
 
 #footer .footer-top {
     padding: 60px 0 30px 0;
-    background: #DCDCDC;
+    background: #d2a64c;
 }
 
 #footer .footer-top .footer-contact {
@@ -1692,19 +1715,19 @@ section {
     line-height: 24px;
     margin-bottom: 0;
     font-family: "Raleway", sans-serif;
-    color: #777777;
+    color: #ffffff;
 }
 
 #footer .footer-top h4 {
     font-size: 16px;
     font-weight: bold;
-    color: #21d4fd;
+    color: #ffffff;
     position: relative;
     padding-bottom: 12px;
 }
 
 #footer .footer-top h3 {
-    color: #21d4fd;
+    color: #ffffff;
 }
 
 #footer .footer-top .footer-links {
@@ -1719,7 +1742,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #4682B4;
+    color: #ffffff;
     font-size: 18px;
     line-height: 1;
 }
@@ -1735,7 +1758,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-    color: #777777;
+    color: #ffffff;
     transition: 0.3s;
     display: inline-block;
     line-height: 1;

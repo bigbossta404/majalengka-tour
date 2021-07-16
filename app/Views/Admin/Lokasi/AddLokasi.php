@@ -66,10 +66,12 @@
                       <div class="form-group row">
                         <label for="exampleInputEmail1">Tempat Wisata</label>
                         <select name="id_wisata" class="form-control">
-                          <?php if ($wisata) : ?>
+                          <?php if (count($wisata) >= 1) : ?>
                             <?php foreach ($wisata as $data) : ?>
                               <option value="<?= $data['id_produk'];  ?>"><?= $data['nama_produk'];  ?></option>
                             <?php endforeach; ?>
+                          <?php else : ?>
+                            <option value="kosong">Lokasi Terisi</option>
                           <?php endif; ?>
                         </select>
                       </div>

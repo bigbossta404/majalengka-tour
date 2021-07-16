@@ -32,41 +32,6 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-tree"></i>
-            <p>
-              Kelola Tempat Wisata
-              <i class="fas fa-angle-left right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="<?= base_url('AdminController/AddWisata'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Tambah Tempat Wisata</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('AdminController/EditWisata'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Edit Tempat Wisata</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('AdminController/AddLokasi'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Tambah Lokasi</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('AdminController/EditLokasi'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Edit Lokasi</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
             <i class="nav-icon fas fa-cubes"></i>
             <p>
               Kelola Produk
@@ -108,6 +73,41 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tree"></i>
+            <p>
+              Kelola Lokasi Wisata
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <!-- <li class="nav-item">
+              <a href="<?= base_url('AdminController/AddWisata'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Tambah Tempat Wisata</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('AdminController/EditWisata'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Edit Tempat Wisata</p>
+              </a>
+            </li> -->
+            <li class="nav-item">
+              <a href="<?= base_url('AdminController/AddLokasi'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Tambah Lokasi</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url('AdminController/EditLokasi'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Edit Lokasi</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
             <i class="nav-icon fa fa-wallet"></i>
             <p>
               Kelola Transaksi
@@ -129,7 +129,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item has-treeview">
+        <!-- <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>
@@ -151,7 +151,7 @@
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-users"></i>

@@ -51,6 +51,11 @@ class ModelAdmin extends Model
 		$query = $this->db->query("SELECT * FROM tb_produk where id_kategori = 1 and available = 1 order by id_produk desc");
 		return $query->getResultArray();
 	}
+	public function SeeWisataLokasi()
+	{
+		$query = $this->db->query("SELECT * FROM tb_produk where id_produk not in (select id_produk from tb_titik) and id_kategori = 1 and available = 1 order by id_produk desc");
+		return $query->getResultArray();
+	}
 
 	public function SeeWisataSelection($id_produk)
 	{
@@ -80,7 +85,7 @@ class ModelAdmin extends Model
 	#Proses User
 	public function SeeUser()
 	{
-		$query = $this->db->query("SELECT * FROM tb_user");
+		$query = $this->db->query("SELECT * FROM tb_user where available = 1");
 		return $query->getResultArray();
 	}
 	#End Proses User
@@ -95,6 +100,11 @@ class ModelAdmin extends Model
 	public function SeeProduk()
 	{
 		$query = $this->db->query("SELECT tb.*, tk.jenis_kategori FROM tb_produk as tb JOIN tb_kategori as tk ON tk.id_kategori=tb.id_kategori WHERE available = 1");
+		return $query->getResultArray();
+	}
+	public function SeePenginapan()
+	{
+		$query = $this->db->query("SELECT tb.*, tk.jenis_kategori FROM tb_produk as tb JOIN tb_kategori as tk ON tk.id_kategori=tb.id_kategori WHERE available = 1 AND tb.id_kategori = 4");
 		return $query->getResultArray();
 	}
 
@@ -233,7 +243,7 @@ class ModelAdmin extends Model
 
 	public function SelectionTitik($id_titik)
 	{
-		$query = $this->db->query("SELECT * FROM tb_titik as tk JOIN tb_wisata as tw ON tw.id_wisata=tk.id_wisata WHERE id_titik='$id_titik'");
+		$query = $this->db->query("SELECT * FROM tb_titik as tk JOIN tb_produk as tw ON tw.id_produk=tk.id_produk WHERE id_titik='$id_titik'");
 		return $query->getRowArray();
 	}
 

@@ -444,7 +444,8 @@ class AdminController extends BaseController
 			$data['nama_admin'] = $session->get('nama_admin');
 			$data['gambar'] = $session->get('gambar');
 			$data['title'] = 'Edit Produk';
-			$data['produk'] = $modelAdmin->SeeProduk();
+			$data['wisata'] = $modelAdmin->SeeWisata();
+			$data['penginapan'] = $modelAdmin->SeePenginapan();
 
 			echo view('Admin/AssetAdmin/AssetCSS');
 			echo view('Admin/AssetAdmin/Navbar', $data);
@@ -555,13 +556,22 @@ class AdminController extends BaseController
 		$data['nama_admin'] = $session->get('nama_admin');
 		$data['gambar'] = $session->get('gambar');
 
-		unlink(ROOTPATH . 'public/gambar_produk/' . $gambar);
 
-		if ($modelAdmin->HapusProduk($id_produk)) {
-			session()->setFlashdata('msg', "Data Produk Berhasil dihapus");
-			return redirect()->to('../AdminController/EditProduk');
+		if (file_exists(ROOTPATH . 'public/gambar_produk/' . $gambar)) {
+			if ($modelAdmin->HapusProduk($id_produk)) {
+				unlink(ROOTPATH . 'public/gambar_produk/' . $gambar);
+				session()->setFlashdata('msg', "Data Produk Berhasil dihapus");
+				return redirect()->to('../AdminController/EditProduk');
+			} else {
+				echo "error";
+			}
 		} else {
-			echo "error";
+			if ($modelAdmin->HapusProduk($id_produk)) {
+				session()->setFlashdata('msg', "Data Produk Berhasil dihapus");
+				return redirect()->to('../AdminController/EditProduk');
+			} else {
+				echo "error";
+			}
 		}
 	}
 	#End Proses Data
@@ -864,7 +874,7 @@ class AdminController extends BaseController
 			$data['nama_admin'] = $session->get('nama_admin');
 			$data['gambar'] = $session->get('gambar');
 			$data['title'] = 'Tambah Lokasi';
-			$data['wisata'] = $modelAdmin->SeeWisata();
+			$data['wisata'] = $modelAdmin->SeeWisataLokasi();
 
 			echo view('Admin/AssetAdmin/AssetCSS');
 			echo view('Admin/AssetAdmin/Navbar', $data);

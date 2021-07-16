@@ -6,8 +6,10 @@
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-6">
+            <div class="col-sm-6 d-flex">
               <h1 class="m-0 text-dark">Data Produk</h1>
+              <a href="#" class="btn btn-secondary ml-2 mr-2 btnwisata">Wisata</a>
+              <a href="#" class="btn btn-primary btnpenginapan">Penginapan</a>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -32,47 +34,73 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                <?php if (session()->getFlashdata('msg')) : ?>
-                  <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <span class="alert-icon"></span>
-                    <span class="alert-text"><strong><?= session()->getFlashdata('msg') ?></strong></span>
+                  <?php if (session()->getFlashdata('msg')) : ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <span class="alert-icon"></span>
+                      <span class="alert-text"><strong><?= session()->getFlashdata('msg') ?></strong></span>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
-                  </div>
-                <?php endif; ?>
-                  <table id="example1" class="table table-bordered table-striped">
+                    </div>
+                  <?php endif; ?>
+                  <table id="tablewisata" class="table table-bordered table-striped tabelwisata">
                     <thead>
                       <tr>
                         <th style="width: 10px">No</th>
                         <th>Nama Produk</th>
-                        <th>Kategori</th>
-                        <!-- <th>Stok Produk</th> -->
                         <th>Harga Produk</th>
-                        <th>Deskripsi</th>
+                        <th style="width: 35%;">Deskripsi</th>
                         <th>Gambar</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php $no = 0; ?>
-                      <?php if ($produk): ?>
-                        <?php foreach($produk as $data): ?>
+                      <?php if ($wisata) : ?>
+                        <?php foreach ($wisata as $data) : ?>
                           <tr>
-                            <td><?= $no+=1 ?></td>
+                            <td><?= $no += 1 ?></td>
                             <td><?= $data['nama_produk']  ?></td>
-                            <td><?= $data['jenis_kategori']  ?></td>
-                            <!-- <td><?= $data['stok']  ?></td> -->
                             <td>Rp.<?= number_format($data['harga'])  ?></td>
                             <td style="text-align: justify;"><?= $data['deskripsi']  ?></td>
-                            <td><img style="width:150px" src=" <?= base_url('gambar_produk/'.$data['gambar'])  ?>" alt=""></td>
+                            <td><img style="width:150px" src=" <?= base_url('gambar_produk/' . $data['gambar'])  ?>" alt=""></td>
                             <td>
-                              <a href="<?= base_url('AdminController/AddEditProduk/'.$data['id_produk']) ?>" class="btn btn-info">EDIT</a>
-                              <a href="<?= base_url('AdminController/HapusProduk/'.$data['id_produk'].'/'.$data['gambar']) ?>" class="btn btn-danger">HAPUS</a>
+                              <a href="<?= base_url('AdminController/AddEditProduk/' . $data['id_produk']) ?>" class="btn btn-info">EDIT</a>
+                              <a href="<?= base_url('AdminController/HapusProduk/' . $data['id_produk'] . '/' . $data['gambar']) ?>" class="btn btn-danger">HAPUS</a>
                             </td>
                           </tr>
-                        <?php endforeach;?>
-                      <?php endif;?>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
+                    </tbody>
+                  </table>
+                  <table id="tablenginap" class="table table-bordered table-striped tabelpenginapan" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th style="width: 10px">No</th>
+                        <th>Nama Produk</th>
+                        <th>Harga Produk</th>
+                        <th style="width: 35%;">Deskripsi</th>
+                        <th>Gambar</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $no = 0; ?>
+                      <?php if ($penginapan) : ?>
+                        <?php foreach ($penginapan as $data) : ?>
+                          <tr>
+                            <td><?= $no += 1 ?></td>
+                            <td><?= $data['nama_produk']  ?></td>
+                            <td>Rp.<?= number_format($data['harga'])  ?></td>
+                            <td style="text-align: justify;"><?= $data['deskripsi']  ?></td>
+                            <td><img style="width:150px" src=" <?= base_url('gambar_produk/' . $data['gambar'])  ?>" alt=""></td>
+                            <td>
+                              <a href="<?= base_url('AdminController/AddEditProduk/' . $data['id_produk']) ?>" class="btn btn-info">EDIT</a>
+                              <a href="<?= base_url('AdminController/HapusProduk/' . $data['id_produk'] . '/' . $data['gambar']) ?>" class="btn btn-danger">HAPUS</a>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
                     </tbody>
                   </table>
                 </div>
