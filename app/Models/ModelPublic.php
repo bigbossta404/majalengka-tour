@@ -44,7 +44,7 @@ class ModelPublic extends Model
 
 	public function RegisterProses($fname, $lname, $email, $password)
 	{
-		$query = $this->db->query("INSERT INTO tb_user(fname, lname, email, password) VALUES('$fname', '$lname', '$email', '$password')");
+		$query = $this->db->query("INSERT INTO tb_user(fname, lname, email, password,available) VALUES('$fname', '$lname', '$email', '$password','1')");
 		return $query;
 	}
 	#END PROSES REGISTER

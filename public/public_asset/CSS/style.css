@@ -649,6 +649,69 @@ svg {
 /*--------------------------------------------------------------
 --------------------------------------------------------------*/
 
+.slider {
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(300px * 7);
+    align-items: center;
+    animation: scroll 40s linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-300px * 1));
+        transform: translateX(calc(-300px * 1));
+    }
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-300px * 1));
+        transform: translateX(calc(-300px * 1));
+    }
+}
+
+.slide {
+    display: flex;
+    width: 300px;
+    align-items: center;
+    perspective: 100px;
+}
+
+.slide img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 1%;
+}
+
+#footerslide:hover {
+    transform: translateZ(20px);
+}
+
+
+/*--------------------------------------------------------------
+--------------------------------------------------------------*/
+
 .cardlink:after,
 .cardlink:before {
     opacity: 0;

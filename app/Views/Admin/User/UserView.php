@@ -45,18 +45,18 @@
                     </thead>
                     <tbody>
                       <?php $no = 0; ?>
-                      <?php if ($user): ?>
-                        <?php foreach($user as $data): ?>
+                      <?php if ($user) : ?>
+                        <?php foreach ($user as $data) : ?>
                           <tr>
-                            <td><?= $no+=1 ?></td>
+                            <td><?= $no += 1 ?></td>
                             <td><?= $data['fname']  ?> <?= $data['lname']  ?></td>
-                            <td>@<?= $data['username']  ?></td>
+                            <td><?= $data['username']  ?></td>
                             <td><?= $data['email']  ?></td>
                             <td><?= $data['telephone']  ?></td>
-                            <td><img style="width:150px" src=" <?= base_url('gambar_user/'.$data['gambar'])  ?>" alt=""></td>
+                            <td><img style="width:150px" src=" <?= ($data['gambar'] == null) ? base_url('public_asset/img/default.png') : base_url('gambar_user/' . $data['gambar']) ?>" alt=""></td>
                           </tr>
-                        <?php endforeach;?>
-                      <?php endif;?>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
                     </tbody>
                   </table>
                 </div>

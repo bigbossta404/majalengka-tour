@@ -1,5 +1,27 @@
 <!-- ======= Footer ======= -->
 <footer id="footer">
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide">
+        <img src="<?= base_url('public_asset/img_wisata/ciboer.jpg'); ?>" height="200" id="footerslide" alt="" />
+      </div>
+      <div class="slide">
+        <img src="<?= base_url('public_asset/img_wisata/curugibun.jpg'); ?>" height="200" id="footerslide" alt="" />
+      </div>
+      <div class="slide">
+        <img src="<?= base_url('public_asset/img_wisata/panyaweuyan.jpg'); ?>" height="200" id="footerslide" alt="" />
+      </div>
+      <div class="slide">
+        <img src="<?= base_url('public_asset/img_wisata/paraland.jpg'); ?>" height="200" id="footerslide" alt="" />
+      </div>
+      <div class="slide">
+        <img src="<?= base_url('public_asset/img_wisata/rivertubing.jpg'); ?>" height="200" id="footerslide" alt="" />
+      </div>
+      <div class="slide">
+        <img src="<?= base_url('public_asset/img_wisata/situcipanten.jpg'); ?>" height="200" id="footerslide" alt="" />
+      </div>
+    </div>
+  </div>
   <div class="footer-top">
     <div class="container">
       <div class="row">

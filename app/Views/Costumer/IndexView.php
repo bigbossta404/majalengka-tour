@@ -40,6 +40,7 @@
       </div>
     </section>
     <!-- ======= About Section ======= -->
+
     <section id="about" class="about">
       <div class="aboutcontain" data-aos="fade-up">
         <div class="row">
@@ -52,12 +53,9 @@
             <p>Majalengka Tour adalah sebuah situs untuk mempermudah kebutuhan wisatawan yang ingin berkunjung dan berliburan di Morwali. Semua kebutuhan dalam transportasi, tiket wisata, penginapan dan informasi tentang wisata Morwali disediakan disini!</p>
           </div>
         </div>
-        <!-- <div class="section-title">
-          <h2>TENTANG</h2>
-          <p>MOROWALI TOUR</p>
-        </div> -->
       </div>
     </section>
+
     <!-- End About Section -->
   </main><!-- End #main -->
 </body>

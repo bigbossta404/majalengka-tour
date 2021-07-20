@@ -61,7 +61,7 @@
     }).addTo(map);
 
     var marker = L.marker([<?= $titik['latitude']  ?>, <?= $titik['longtitude']  ?>]).addTo(map);
-    marker.bindPopup("<?= $titik['nama_produk']; ?> <img style='width:100px;' src='<?= base_url('gambar_wisata/' . $titik['gambar']) ?>'>").openPopup();
+    marker.bindPopup("<?= $titik['nama_produk']; ?> <img style='width:100px;' src='<?= base_url('public_asset/img_wisata/' . $titik['gambar']) ?>'>").openPopup();
 
     //jarak
     var popup = L.popup();

@@ -104,7 +104,7 @@ class ModelAdmin extends Model
 	}
 	public function SeePenginapan()
 	{
-		$query = $this->db->query("SELECT tb.*, tk.jenis_kategori FROM tb_produk as tb JOIN tb_kategori as tk ON tk.id_kategori=tb.id_kategori WHERE available = 1 AND tb.id_kategori = 4");
+		$query = $this->db->query("SELECT tb.*, tk.jenis_kategori FROM tb_produk as tb JOIN tb_kategori as tk ON tk.id_kategori=tb.id_kategori WHERE available = 1 AND tb.id_kategori = 2");
 		return $query->getResultArray();
 	}
 
@@ -277,7 +277,7 @@ class ModelAdmin extends Model
 	#PROSES JUAL
 	public function SeeJual()
 	{
-		$query = $this->db->query("SELECT tj.*, tp.nama_produk FROM tb_jual as tj JOIN tb_produk as tp ON tp.id_produk=tj.id_produk");
+		$query = $this->db->query("SELECT tj.*, tp.nama_produk FROM tb_jual as tj JOIN tb_produk as tp ON tp.id_produk=tj.id_produk WHERE tj.available = 1");
 		return $query->getResultArray();
 	}
 
@@ -289,7 +289,7 @@ class ModelAdmin extends Model
 
 	public function AddJual($id_produk, $tanggal, $stock)
 	{
-		$query = $this->db->query("INSERT INTO tb_jual(id_produk, tanggal_jual, stock) VALUES('$id_produk', '$tanggal', '$stock')");
+		$query = $this->db->query("INSERT INTO tb_jual(id_produk, tanggal_jual, stock, available) VALUES('$id_produk', '$tanggal', '$stock',1)");
 		return $query;
 	}
 
@@ -301,7 +301,7 @@ class ModelAdmin extends Model
 
 	public function HapusJual($id_jual)
 	{
-		$query = $this->db->query("DELETE FROM tb_jual WHERE id_jual='$id_jual'");
+		$query = $this->db->query("UPDATE tb_jual SET available = 0 WHERE id_jual='$id_jual'");
 		return $query;
 	}
 	#END PROSES JUAL
