@@ -13,7 +13,7 @@
     <section class="topvisited d-flex justify-content-center align-items-center flex-column">
       <h1>Top Visited!</h1>
       <div class="boxslide d-flex">
-        <a href="#" class="cardbox">
+        <a href="<?= base_url('PublicController/PayView/1'); ?>" class="cardbox">
           <img src="<?= base_url('public_asset/img_wisata/panyaweuyan.jpg') ?>" id="cardimg" alt="">
           <div class="overlay d-flex align-items-center justify-content-center">
             <div class="textoverlay">Panyaweuyan</div>
@@ -25,13 +25,13 @@
             <div class="textoverlay">Ciboer Pass</div>
           </div>
         </a>
-        <a href="#" class="cardbox">
+        <a href="<?= base_url('PublicController/PayView/4'); ?>" class="cardbox">
           <img src="<?= base_url('public_asset/img_wisata/paraland.jpg') ?>" id="cardimg" alt="">
           <div class="overlay d-flex align-items-center justify-content-center">
             <div class="textoverlay">Paraland</div>
           </div>
         </a>
-        <a href="#" class="cardbox">
+        <a href="<?= base_url('PublicController/PayView/3'); ?>" class="cardbox">
           <img src="<?= base_url('public_asset/img_wisata/situcipanten.jpg') ?>" id="cardimg" alt="">
           <div class="overlay d-flex align-items-center justify-content-center">
             <div class="textoverlay">Situcipanten</div>

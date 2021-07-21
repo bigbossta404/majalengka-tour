@@ -10,12 +10,13 @@
   <main id="main" data-aos="fade-in">
     <!-- ======= Courses Section ======= -->
     <section id="courses" class="courses">
-      <div class="container" data-aos="fade-up">
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-
-          <div class="col-lg-7 col-md-5 d-flex align-items-stretch mt-4 mt-md-0">
+      <div class="container pageproduk" data-aos="fade-up">
+        <div class="row contentproduk" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg mt-4 mt-md-0 d-flex align-items-center justify-content-center card-produk">
             <div style="margin-top:20px;" class="course-item">
-              <img style="width:100%;" src="<?= base_url('gambar_produk/' . $produk['gambar']);  ?>" class="img-fluid">
+              <div class="img-produk-box">
+                <img style='height: 100%; width: 100%; object-fit: cover' src="<?= base_url('gambar_produk/' . $produk['gambar']);  ?>">
+              </div>
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <h3><?= $produk['nama_produk'] ?></h3>
@@ -32,9 +33,8 @@
                 <p style="text-align:justify;"><?= $produk['deskripsi'] ?></p>
               </div>
             </div>
-          </div>
-          <!-- input data -->
-          <div style="height: 410px;" class="col-lg-4 col-md-2 d-flex align-items-stretch mt-2 mt-md-0">
+            <!-- </div>
+          <div style="height: 410px;" class="col-lg mt-2 mt-md-0 d-flex align-items-center justify-content-center  card-transaksi"> -->
             <div style="margin-top:20px;" class="course-item">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-1">
@@ -118,8 +118,12 @@
               </div>
             </div>
           </div>
-
         </div>
+      </div>
+      <div class="bg-img-produk">
+        <img src="<?= base_url('public_asset/img/about.png') ?>" height="600px" id="bg-img-produk" alt="">
+        <img src="<?= base_url('public_asset/img/about.png') ?>" height="600px" class="ml-auto" id="bg-img-produk2" alt="">
+      </div>
     </section><!-- End Courses Section -->
   </main><!-- End #main -->
 
